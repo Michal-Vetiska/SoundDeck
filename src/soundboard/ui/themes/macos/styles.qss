@@ -1,0 +1,251 @@
+/* SoundDeck stylesheet. Colors and metrics come from theme tokens. */
+
+QMainWindow, #AppRoot {
+    background-color: {{background}};
+    color: {{text_primary}};
+    font-family: {{font_family}};
+    font-size: {{font_size}}px;
+}
+
+QLabel {
+    color: {{text_primary}};
+    background: transparent;
+}
+
+QLabel#MutedLabel, QLabel#DeviceLabel, QLabel#EmptyState {
+    color: {{text_secondary}};
+}
+
+QLabel#EmptyState {
+    font-size: 16px;
+}
+
+QLabel#WarningBanner, QLabel#InfoBanner {
+    background-color: {{surface}};
+    border: 1px solid {{border}};
+    border-radius: {{radius_medium}}px;
+    padding: {{spacing_medium}}px;
+    color: {{text_primary}};
+}
+
+QLabel#SectionTitle {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+QLabel#StatusRunning {
+    color: {{success}};
+    font-weight: 600;
+}
+
+QLabel#StatusStopped {
+    color: {{text_secondary}};
+    font-weight: 600;
+}
+
+QLabel#StatusError {
+    color: {{danger}};
+    font-weight: 600;
+}
+
+QLabel#StatusDotRunning, QLabel#StatusDotStopped, QLabel#StatusDotError {
+    min-width: 8px;
+    max-width: 8px;
+    min-height: 8px;
+    max-height: 8px;
+    border-radius: 4px;
+}
+
+QLabel#StatusDotRunning { background-color: {{success}}; }
+QLabel#StatusDotStopped { background-color: {{text_secondary}}; }
+QLabel#StatusDotError { background-color: {{danger}}; }
+
+#GlassPanel, #HeaderBar, #SoundCard {
+    background-color: {{surface}};
+    border: 1px solid {{border}};
+    border-radius: {{radius_large}}px;
+}
+
+#HeaderBar {
+    background-color: {{surface_secondary}};
+}
+
+#SoundCard:hover {
+    background-color: {{surface_hover}};
+}
+
+#SoundCard[playing="true"] {
+    background-color: {{accent_soft}};
+    border: 1px solid {{accent}};
+}
+
+#SoundCard[pressed="true"] {
+    background-color: {{surface_secondary}};
+}
+
+QScrollArea#SoundScroll {
+    background: transparent;
+    border: none;
+}
+
+QScrollArea#SoundScroll > QWidget > QWidget {
+    background: transparent;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 4px;
+}
+
+QScrollBar::handle:vertical {
+    background: {{border}};
+    border-radius: 4px;
+    min-height: 24px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QPushButton {
+    background-color: {{surface}};
+    color: {{text_primary}};
+    border: 1px solid {{border}};
+    border-radius: {{radius_medium}}px;
+    padding: 8px 14px;
+}
+
+QPushButton:hover {
+    background-color: {{surface_hover}};
+}
+
+QPushButton:pressed {
+    background-color: {{surface_secondary}};
+}
+
+QPushButton:disabled {
+    color: {{text_secondary}};
+}
+
+QPushButton#PrimaryButton {
+    background-color: {{accent}};
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+QPushButton#PrimaryButton:hover {
+    background-color: {{accent}};
+}
+
+QPushButton#DangerButton {
+    color: {{danger}};
+}
+
+QPushButton#PlayButton {
+    background-color: {{accent}};
+    color: white;
+    border: none;
+    border-radius: 28px;
+    font-size: 18px;
+    padding: 0px;
+    min-width: 56px;
+    max-width: 56px;
+    min-height: 56px;
+    max-height: 56px;
+}
+
+QPushButton#PlayButton:hover {
+    background-color: {{accent}};
+}
+
+QPushButton#QuietButton {
+    background: transparent;
+    border: none;
+    color: {{text_secondary}};
+    padding: 4px 8px;
+}
+
+QPushButton#QuietButton:hover {
+    color: {{text_primary}};
+    background-color: {{surface_hover}};
+}
+
+QLineEdit, QComboBox {
+    background-color: {{surface}};
+    color: {{text_primary}};
+    border: 1px solid {{border}};
+    border-radius: {{radius_small}}px;
+    padding: 6px 8px;
+    min-height: 22px;
+}
+
+QLineEdit:focus, QComboBox:focus {
+    border: 1px solid {{accent}};
+}
+
+QComboBox QAbstractItemView {
+    background-color: {{dialog_background}};
+    color: {{text_primary}};
+    selection-background-color: {{accent_soft}};
+    selection-color: {{text_primary}};
+    border: 1px solid {{border}};
+}
+
+QSlider::groove:horizontal {
+    height: 4px;
+    background: {{border}};
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    width: 14px;
+    height: 14px;
+    margin: -6px 0;
+    background: {{accent}};
+    border-radius: 7px;
+}
+
+QProgressBar {
+    background-color: {{surface_secondary}};
+    border: none;
+    border-radius: 2px;
+    max-height: 4px;
+}
+
+QProgressBar::chunk {
+    background-color: {{accent}};
+    border-radius: 2px;
+}
+
+QDialog, QMessageBox {
+    background-color: {{dialog_background}};
+    color: {{text_primary}};
+}
+
+QMenu {
+    background-color: {{dialog_background}};
+    color: {{text_primary}};
+    border: 1px solid {{border}};
+    border-radius: {{radius_medium}}px;
+    padding: 6px;
+}
+
+QMenu::item {
+    padding: 6px 18px;
+    border-radius: {{radius_small}}px;
+}
+
+QMenu::item:selected {
+    background-color: {{accent_soft}};
+}
+
+QCheckBox {
+    color: {{text_primary}};
+    spacing: 8px;
+}
+
+QCheckBox:disabled {
+    color: {{text_secondary}};
+}

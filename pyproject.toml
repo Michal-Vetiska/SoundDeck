@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sounddeck"
+version = "0.1.0"
+description = "Desktop soundboard that mixes a microphone with sound effects into a virtual audio device."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "SoundDeck contributors" }]
+keywords = ["soundboard", "audio", "discord", "blackhole"]
+dependencies = [
+    "PySide6>=6.8",
+    "sounddevice>=0.5.1",
+    "numpy>=2.0",
+    "pynput>=1.7.7",
+    "yt-dlp>=2024.8.6",
+]
+
+[project.optional-dependencies]
+macos = ["pyobjc-framework-Cocoa>=10.3"]
+dev = ["pytest>=8.0", "pyinstaller>=6.0"]
+
+[project.scripts]
+sounddeck = "soundboard.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"soundboard.ui.themes.macos" = ["*.qss"]
+"soundboard.ui.themes.windows" = ["*.qss"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
